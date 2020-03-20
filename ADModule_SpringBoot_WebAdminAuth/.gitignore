@@ -6,6 +6,7 @@ target/
 
 #STS#
 application.properties
+logfile.log
 .apt_generated
 .classpath
 .factorypath
