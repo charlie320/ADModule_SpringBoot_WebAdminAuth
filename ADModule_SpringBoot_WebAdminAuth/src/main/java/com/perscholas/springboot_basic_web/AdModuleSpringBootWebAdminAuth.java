@@ -23,8 +23,8 @@ public class AdModuleSpringBootWebAdminAuth {
 				new FilterRegistrationBean<>();
 		registrationBean.setFilter(new AuthenticationFilter());
 		registrationBean.setUrlPatterns(Arrays.asList(new String[] {"/homePage", "/aboutPage", 
-				"/expenseForm", "/createExpense", "/allExpenses"}));
-
+				"/expenseForm", "/createExpense", "/allExpenses", "/expensesByDateRange", 
+				"/retrieveExpensesByDateReport"}));
 		return registrationBean;
 	}
 	

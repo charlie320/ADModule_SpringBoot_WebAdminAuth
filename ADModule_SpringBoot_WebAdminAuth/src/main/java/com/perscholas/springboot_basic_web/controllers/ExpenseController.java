@@ -45,4 +45,15 @@ public class ExpenseController {
 		model.addAttribute("allExpenses", allExpenses);
 		return "ExpenseReport";
 	}
+	
+	@GetMapping("/expensesByDateRange")
+	public String expensesByDateRange(Model model) {
+		
+		return "ExpenseReportByDate";
+	}
+	
+	@PostMapping("/retrieveExpensesByDateReport")
+	public String retrieveExpenseByDateReport(Model model) {
+		return null;
+	}
 }
