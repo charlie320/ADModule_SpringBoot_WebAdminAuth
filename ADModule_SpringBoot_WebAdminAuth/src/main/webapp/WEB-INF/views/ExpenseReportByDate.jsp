@@ -13,6 +13,7 @@
 	<h1>Expense Report By Date Range</h1>
 	<%@ include file="Navigation.jsp"%>
 	<fieldset>
+	
 		<legend>Expenses</legend>
 		<form action="${pageContext.request.contextPath }/customDateRangeReport" method="get">
 		<div>
@@ -41,6 +42,7 @@
 				</tr>
 			</c:forEach>
 		</table>
+		
 	</fieldset>
 </body>
 </html>
