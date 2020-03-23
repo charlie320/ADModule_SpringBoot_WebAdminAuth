@@ -1,5 +1,6 @@
 package com.perscholas.springboot_basic_web.services;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,11 @@ public class ExpenseService {
 		List<Expense> allExpenses = expenseRepository.findAll();
 		return allExpenses;
 	}
+	
+	public List<Expense> expensesByDateRange(LocalDate begDate, LocalDate endDate){
+		List<Expense> expensesByDateRange = expenseRepository.expensesByDateRange(begDate, endDate);
+		return expensesByDateRange;
+	}
+
 
 }

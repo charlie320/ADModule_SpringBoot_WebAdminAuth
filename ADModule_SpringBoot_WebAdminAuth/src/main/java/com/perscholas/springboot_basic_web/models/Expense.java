@@ -10,12 +10,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "expenses")
+@NamedQuery(name = "Expense.expensesByDateRange", query = "select e from Expense e where e.date between ?1 and ?2")
 public class Expense {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

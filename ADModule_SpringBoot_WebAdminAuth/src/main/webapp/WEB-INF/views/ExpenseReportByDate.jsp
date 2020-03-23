@@ -12,9 +12,35 @@
 <body>
 	<h1>Expense Report By Date Range</h1>
 	<%@ include file="Navigation.jsp"%>
-	<form>>
-		
-	
-	</form>
+	<fieldset>
+		<legend>Expenses</legend>
+		<form action="${pageContext.request.contextPath }/customDateRangeReport" method="get">
+		<div>
+			<label>Begin Date:</label>
+			<input type="date" name="begDate" />
+		</div>
+		<div>
+			<label>End Date:</label>
+			<input type="date" name="endDate" />
+		</div>
+		<div>
+			<input type="submit" value="Submit" />
+		</div>
+		</form>
+		<table>
+			<tr>
+				<td>Title</td>
+				<td>Category</td>
+				<td>Amount</td>
+			</tr>
+			<c:forEach items="${expensesByDateRange}" var = "expense">
+				<tr>
+					<td>${expense.title}</td>
+					<td>${expense.expenseCategory.expenseCategoryName}</td>
+					<td>${expense.amount}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</fieldset>
 </body>
 </html>
